@@ -1,4 +1,11 @@
-// Table 1
+// Table 1 - Mobility
+
+use "C:\Users\jieun\Dropbox\Gentrification\4. Emergency relief payment\A1. Mobility(SK_inflow)\Inflow_regression_data.dta"
+
+sum inflow_except_mydong inflow_from_Seoul if (week_num >=5 & week_num<=19) & (year ==2020)
+sum inflow_except_mydong inflow_from_Seoul if (week_num >=20 & week_num<=31) & (year ==2020)
+
+// Table 1 - Card
 * file
 use "C:\Users\jieun\Dropbox\Gentrification\4. Emergency relief payment\Final version_Data and Code\Table 1_Dataset_BC_CARD_WEEKLY_2020_seoul residents_to_all_obs15426103.dta"
 
@@ -11,7 +18,7 @@ gen add2 = (indtitle_c == "출판인쇄물")|(indtitle_c == "구내매점")|(ind
 * keep 2020
 keep if year == 2020
 
-* online 제외
+* excldue online
 keep if contactless != 1
 
 * No. of physical credit card transactions and SP --------------------
